@@ -16,7 +16,7 @@ describe Car do
   end
 
   context 'associations' do
-    # it { should belong_to(:manufacturer) }
+    it { should belong_to(:manufacturer) }
     # What about when manufacturer is deleted...
   end
 end

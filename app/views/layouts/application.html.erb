@@ -8,10 +8,10 @@
 </head>
 <body>
 
-<% if flash[:notice].present? %>
-  <%= flash[:notice] %>
-<% end %>
-<%= yield %>
-<%= link_to 'Home', manufacturers_path %>
+  <% if flash[:notice].present? %>
+    <%= flash[:notice] %>
+  <% end %>
+  <%= yield %>
+  <%= link_to 'Home', manufacturers_path %>
 </body>
 </html>

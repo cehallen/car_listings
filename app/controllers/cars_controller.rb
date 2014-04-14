@@ -13,7 +13,7 @@ class CarsController < ApplicationController
         notice: 'Car added!'
     else
       # render 'manufacturers/new'
-      # I couldn't get the 'Car added' to go away from the last successful add, causing tests to fail..  So did this second best option
+      # Couldn't get the 'Car added' to go away from the last successful add, causing tests to fail..  So did this second best option
       redirect_to new_manufacturer_car_path(@manufacturer),
         notice: 'You had missing fields'
     end

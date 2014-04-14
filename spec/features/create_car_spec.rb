@@ -25,12 +25,12 @@ feature 'create a car', %Q{
   scenario 'with valid attributes' do
     prev_count = Car.count
     visit manufacturer_path(@manufacturer)
-    click_on 'Add a Car' # new car page should have title 'Add a Car'
+    click_on 'Add a Car'
 
     fill_in 'Color', with: 'Black'
-    fill_in 'Year', with: '2013' # remember to limit to post-1980
+    fill_in 'Year', with: '2013'
     fill_in 'Mileage', with: '20000'
-    fill_in 'Description', with: 'Runs good'  # optional
+    fill_in 'Description', with: 'Runs good'
     click_button 'Submit'
 
     expect(page).to have_content('Car added!')

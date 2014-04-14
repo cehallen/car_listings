@@ -11,7 +11,7 @@
     <td><%= @manufacturer.country %></td>
     <td>
       <% @manufacturer.cars.each do |car| %>
-        <li><%= "#{car.color} - #{car.year} - #{car.mileage} miles"%></li>
+        <li><%= "#{car.color} - #{car.year} - #{car.mileage} miles - #{car.description}"%></li>
       <% end %>
     </td>
   </tr>

@@ -21,7 +21,6 @@ feature 'create a manufacturer', %Q{
 
     fill_in 'Name', with: 'Tesla'
     select 'United States', from: 'Country'
-    # save_and_open_page
     click_button 'Submit'
 
     expect(page).to have_content('Manufacturer added!')
