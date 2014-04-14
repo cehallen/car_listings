@@ -1,6 +1,6 @@
 CarListings::Application.routes.draw do
   root 'manufacturers#index'
   resources :manufacturers do
-    resources :cars
+    resources :cars, only: [:new, :create]
   end
 end
