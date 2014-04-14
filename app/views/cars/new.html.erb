@@ -1,6 +1,7 @@
 <h3>Add a Car</h3>
 
-<%= simple_form_for [@manufacturer, @car] do |f| %>
+<%= simple_form_for @car do |f| %>
+  <%= f.input :manufacturer_id, collection: @manufacturers %>
   <%= f.input :color, input_html: { size: 30 } %>
   <%= f.input :year, hint: '(Must be 1980 or newer)', input_html: { size: 30 } %>
   <%= f.input :mileage, input_html: { size: 30 } %>
@@ -8,4 +9,4 @@
   <%= f.button :submit, 'Submit' %>
 <% end %>
 
-<p><%= link_to 'Manufacturer Page', manufacturer_path(@manufacturer) %></p>
+<p><%= link_to 'Cars Page', cars_path %></p>

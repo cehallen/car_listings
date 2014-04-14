@@ -10,9 +10,6 @@ describe Car do
 
     it { should have_valid(:mileage).when(23) }
     it { should_not have_valid(:mileage).when(nil, '', -99) }    
-
-    it { should have_valid(:manufacturer).when(Manufacturer.new) }
-    it { should_not have_valid(:manufacturer).when(nil) }
   end
 
   context 'associations' do

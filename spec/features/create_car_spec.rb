@@ -18,19 +18,19 @@ feature 'create a car', %Q{
 # * Upon successfully creating a car, I am redirected so that 
 #   I can create another car.
 
-  before(:each) do
-    @manufacturer = FactoryGirl.create(:manufacturer)
-  end
+  # before(:each) do
+  #   @manufacturer = FactoryGirl.create(:manufacturer)
+  # end
 
   scenario 'with valid attributes' do
     prev_count = Car.count
-    visit manufacturer_path(@manufacturer)
-    click_on 'Add a Car'
+    visit cars_path
+    click_on 'Add Car'
 
     fill_in 'Color', with: 'Black'
     fill_in 'Year', with: '2013'
     fill_in 'Mileage', with: '20000'
-    fill_in 'Description', with: 'Runs good'
+    fill_in 'Description', with: 'Runs well'
     click_button 'Submit'
 
     expect(page).to have_content('Car added!')
@@ -40,13 +40,13 @@ feature 'create a car', %Q{
 
   scenario 'with invalid attributes' do
     prev_count = Car.count
-    visit manufacturer_path(@manufacturer)
-    click_on 'Add a Car'
+    visit cars_path
+    click_on 'Add Car'
 
     click_button 'Submit'
 
     expect(page).to_not have_content('Car added!')
-    expect(page).to have_content('You had missing fields')
+    expect(page).to have_content("can't be blank")
     expect(Car.count).to eq(prev_count)
   end
 end
