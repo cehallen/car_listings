@@ -20,22 +20,23 @@ feature 'create a manufacturer', %Q{
     click_on 'Add Manufacturer'
 
     fill_in 'Name', with: 'Tesla'
-    select 'USA', from: 'Country'
+    select 'United States', from: 'Country'
+    # save_and_open_page
     click_button 'Submit'
 
     expect(page).to have_content('Manufacturer added!')
     expect(Manufacturer.count).to eq(prev_count + 1)
   end
 
-  # scenario 'with invalid attributes' do
-  #   prev_count = Manufacturer.count
-  #   visit manufacturers_path
-  #   click_on 'Add Manufacturer'
+  scenario 'with invalid attributes' do
+    prev_count = Manufacturer.count
+    visit manufacturers_path
+    click_on 'Add Manufacturer'
 
-  #   click_button 'Submit'
+    click_button 'Submit'
 
-  #   expect(page).to_not have_content('Manufacturer added!')
-  #   expect(page).to have_content("can't be blank")
-  #   expect(Manufacturer.count).to eq(prev_count)
-  # end
+    expect(page).to_not have_content('Manufacturer added!')
+    expect(page).to have_content("can't be blank")
+    expect(Manufacturer.count).to eq(prev_count)
+  end
 end

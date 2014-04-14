@@ -2,4 +2,6 @@
 
 <%= simple_form_for @manufacturer do |f| %>
   <%= f.input :name, input_html: { size: 30 } %>  
+  <%= f.input :country, collection: Manufacturer.countries %>
+  <%= f.button :submit, 'Submit' %>
 <% end %>

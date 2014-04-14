@@ -1,0 +1,11 @@
+<h3>Add a Car</h3>
+
+<%= simple_form_for [@manufacturer, @car] do |f| %>
+  <%= f.input :color, input_html: { size: 30 } %>
+  <%= f.input :year, hint: '(Must be 1980 or newer)', input_html: { size: 30 } %>
+  <%= f.input :mileage, input_html: { size: 30 } %>
+  <%= f.input :description, as: :text %>
+  <%= f.button :submit, 'Submit' %>
+<% end %>
+
+
