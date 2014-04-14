@@ -9,7 +9,7 @@ describe Manufacturer do
     it { should_not have_valid(:country).when('', nil) }
   end 
 
-  # context 'associations' do
-  #   it { should have_many(:cars) #.dependent(:nullify????) }
-  # end
+  context 'associations' do
+    it { should have_many(:cars).dependent(:nullify) }
+  end
 end
