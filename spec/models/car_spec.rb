@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Car do
   context 'validations' do
-    it { should have_valid (:color).when('Yellow') }
+    it { should have_valid(:color).when('Yellow') }
     it { should_not have_valid(:color).when('', nil) }
 
     it { should have_valid(:year).when(1999) }
