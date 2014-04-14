@@ -1,7 +1,21 @@
 <h3><%= @manufacturer.name %></h3>
 
-
-<!-- table in notes -->
+<table>
+  <tr>
+    <th>Company Name</th>
+    <th>Country</th>
+    <th>Cars Available</th>
+  </tr>
+  <tr>
+    <td><%= @manufacturer.name %></td>
+    <td><%= @manufacturer.country %></td>
+    <td>
+      <% @manufacturer.cars.each do |car| %>
+        <li><%= "#{car.color}, #{car.year}, #{car.mileage} miles"%></li>
+      <% end %>
+    </td>
+  </tr>
+</table>
 
 
 <p><%= link_to 'Add a Car', new_manufacturer_car_path(@manufacturer) %></p>

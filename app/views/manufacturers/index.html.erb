@@ -5,14 +5,14 @@
     <th>Name</th>
     <th>Country of Origin</th>
   </tr>
-  <tr>
-    <% @manufacturers.each do |manufacturer| %>
-      <td>
-        <%= manufacturer.name %>
-        <%= manufacturer.country %>
-      </td> 
-    <% end %>
-  </tr>
+  
+  <% @manufacturers.each do |manufacturer| %>
+    <tr>
+      <td><%= link_to manufacturer.name, manufacturer_path(manufacturer) %></td>
+      <td><%= manufacturer.country %></td> 
+    </tr>
+  <% end %>
+  
 </table>
 
 <p><%= link_to 'Add Manufacturer', new_manufacturer_path %></p>
