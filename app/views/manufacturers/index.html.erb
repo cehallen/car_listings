@@ -1,0 +1,18 @@
+<h3>All the Manufacturers</h3>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Country of Origin</th>
+  </tr>
+  <tr>
+    <% @manufacturers.each do |manufacturer| %>
+      <td>
+        <%= manufacturer.name %>
+        <%= manufacturer.country %>
+      </td> 
+    <% end %>
+  </tr>
+</table>
+
+<p><%= link_to 'Add Manufacturer', new_manufacturer_path %></p>
